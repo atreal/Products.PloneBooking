@@ -262,13 +262,13 @@ class BookingCenter(ATFolder):
     def getTypeDisplayList(self, ):
         """Returns all types as a DisplayList"""
 
-        return DisplayList([(normalizeString(x, encoding=self.getCharset()), x) for x in self.getTypes()])
+        return DisplayList([(normalizeString(x.decode(self.getCharset())), x) for x in self.getTypes()])
 
     security.declarePublic('getCategoryDisplayList')
     def getCategoryDisplayList(self, ):
         """Returns all categories as a DisplayList"""
 
-        return DisplayList([(normalizeString(x, encoding=self.getCharset()), x) for x in self.getCategories()])
+        return DisplayList([(normalizeString(x.decode(self.getCharset())), x) for x in self.getCategories()])
 
     security.declarePublic('getBookingCenter')
     def getBookingCenter(self):
