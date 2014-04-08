@@ -214,13 +214,21 @@
             </td>
             <td class="bookingCell" style="width:100%;">
               <input type="hidden" tal:attributes="value string:${start_ts}:${end_ts}" />
-              <a title="Book it"
+<!--               <a title="Book it"
                  class="visualNoPrint bookIt "
                  tal:condition="python:(bookableobject and not bookings or not bookableobject)"
                  tal:attributes="href  string:${add_booking_url}?start_ts=${start_ts}&end_ts=${end_ts};
                                  class string:visualNoPrint bookIt ${bookingClass};"
                  i18n:attributes="title link_title_book_it">
                 +
+              </a> -->
+              <a title="Book it"
+                   class="visualNoPrint bookIt "
+                   tal:condition="python:(bookableobject and not bookings and can_add_booking) or (not bookableobject and can_add_booking)"
+                   tal:attributes="href  string:${add_booking_url}?start_ts=${start_ts}&end_ts=${end_ts};
+                                   class string:visualNoPrint bookIt ${bookingClass};"
+                   i18n:attributes="title link_title_book_it">
+                  +
               </a>
               <tal:loop tal:repeat="booking bookings">
                 <a href="#"
@@ -796,7 +804,8 @@
                 </h2>
 
                 <p>
-      	          <span i18n:translate="description_add_new_booking">
+      	          <span i18n:translate="description_add_new_booking"
+                       tal:condition="can_add_booking">
       	            Select a view, search for availability and
 
       	            <span i18n:name="add_new_booking">
@@ -813,7 +822,7 @@
       		    .
       	          </span>
       	          <span i18n:translate="description_add_new_booking_in_calendar_view"
-      	                tal:condition="python:'calendar' in available_modes">
+      	                tal:condition="python:can_add_booking and 'calendar' in available_modes">
       	            On calendar view, add a new booking by clicking on « + ».
       	          </span>
                 </p>
