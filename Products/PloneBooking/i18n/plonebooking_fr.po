@@ -628,6 +628,9 @@ msgstr "Mode de rafraichissement"
 msgid "label_goto_bookable_object"
 msgstr "Voir cette ressource"
 
+msgid "message_end_date_before_start"
+msgstr "La date de fin doit obligatoirement être après à celle de début"
+
 msgid "label_type"
 msgstr "Type"
 

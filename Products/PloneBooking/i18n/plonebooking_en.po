@@ -523,3 +523,24 @@ msgstr "Retract"
 
 msgid "label_book"
 msgstr "Book"
+
+msgid "label_refresh_manual"
+msgstr "Automatic"
+
+msgid "label_refresh_auto"
+msgstr "Manual"
+
+msgid "label_goto_bookable_object"
+msgstr "Goto this bookable objet" 
+
+msgid "message_end_date_before_start"
+msgstr "End date has to be strictly after start date."
+
+msgid "label_type"
+msgstr "Type"
+
+msgid "label_category"
+msgstr "Category"
+
+msgid "label_resource"
+msgstr "Resource"

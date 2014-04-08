@@ -28,36 +28,36 @@ from Products.Archetypes.utils import DisplayList
 from Products.PloneBooking import PloneBookingFactory as _
 
 CALENDAR_REFRESH_MODES = DisplayList((
-    ('auto', _(u'label_refresh_auto')),
-    ('manual', _(u'label_refresh_manual')),
+    ('auto', _(u'label_refresh_auto', default=u'Automatic')),
+    ('manual', _(u'label_refresh_manual', default=u'Manual')),
 ))
 
 REQUIRED_FILTERS = DisplayList((
-    ('type', _(u'label_type')),
-    ('category', _(u'label_category')),
-    ('resource', _(u'label_resource'))))
+    ('type', _(u'label_type', default=u'Type')),
+    ('category', _(u'label_category', default=u'Category')),
+    ('resource', _(u'label_resource', default=u'Resource'))))
 
 CALENDAR_VIEWS = DisplayList((
-    ('day', _(u'label_day')),
-    ('week', _(u'label_week')),
-    ('month', _(u'label_month'))))
+    ('day', _(u'label_day', default=u'Day')),
+    ('week', _(u'label_week', default=u'Week')),
+    ('month', _(u'label_month', default=u'Month'))))
 
 LISTING_VIEWS = DisplayList((
-    ('day', _(u'label_day')),
-    ('week', _(u'label_week')),
-    ('month', _(u'label_month')),
-    ('year', _(u'label_year'))))
+    ('day', _(u'label_day', default=u'Day')),
+    ('week', _(u'label_week', default=u'Week')),
+    ('month', _(u'label_month', default=u'Month')),
+    ('year', _(u'label_year', default=u'Year'))))
 
 VIEW_MODES = DisplayList((
-    ('listing', _(u'label_listing')),
-    ('calendar', _(u'label_calendar')),
+    ('listing', _(u'label_listing', default=u'Listing')),
+    ('calendar', _(u'label_calendar', default=u'Calendar')),
 ))
 
 BOOKING_REVIEW_MODES = DisplayList((
-    ('default', _(u'label_default_booking_review_mode')),
-    ('review', _(u'label_review_bookings')),
-    ('publish', _(u'label_publish_automatically_bookings'))))
+    ('default', _(u'label_default_booking_review_mode', default=u'Default (in booking center)')),
+    ('review', _(u'label_review_bookings', default=u'Review bookings')),
+    ('publish', _(u'label_publish_automatically_bookings', default=u'Publish automatically bookings'))))
 
 GLOBAL_BOOKING_REVIEW_MODES = DisplayList((
-    ('review', _(u'label_review_bookings')),
-    ('publish', _(u'label_publish_automatically_bookings'))))
+    ('review', _(u'label_review_bookings', default=u'Review bookings')),
+    ('publish', _(u'label_publish_automatically_bookings', default=u'Publish automatically bookings'))))

@@ -603,3 +603,12 @@ msgstr ""
 
 msgid "message_end_date_before_start"
 msgstr ""
+
+msgid "label_type"
+msgstr ""
+
+msgid "label_category"
+msgstr ""
+
+msgid "label_resource"
+msgstr ""
