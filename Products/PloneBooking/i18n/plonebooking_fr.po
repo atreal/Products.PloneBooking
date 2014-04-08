@@ -627,3 +627,12 @@ msgstr "Mode de rafraichissement"
 
 msgid "label_goto_bookable_object"
 msgstr "Voir cette ressource"
+
+msgid "label_type"
+msgstr "Type"
+
+msgid "label_category"
+msgstr "Catégorie"
+
+msgid "label_resource"
+msgstr "Ressource"
