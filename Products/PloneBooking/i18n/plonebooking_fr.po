@@ -639,3 +639,11 @@ msgstr "Catégorie"
 
 msgid "label_resource"
 msgstr "Ressource"
+
+#. Minimal booking interval
+msgid "label_bookingcenter_booking_interval"
+msgstr "Période minimale de réservation"
+
+#. You can set the minimum interval for a booking. In minute.
+msgid "help_bookingcenter_booking_interval"
+msgstr "Saisir ici la période minimale pour une réservation. En minute."

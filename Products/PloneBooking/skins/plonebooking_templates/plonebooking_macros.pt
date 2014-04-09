@@ -751,7 +751,8 @@
                          refresh_mode       here/getCalendarRefreshMode;
                          required_filters   here/getRequiredFilters;
                          manual_refresh     python:refresh_mode == 'manual' or required_filters;
-			 ref                request/refresh-filter | nothing;">
+			 ref                request/refresh-filter | nothing;
+                         booking_interval python: here.getBookingIntervalInSeconds();">
   <metal:content define-slot="content" />
 </metal:block>
 
@@ -770,6 +771,7 @@
         <input type="hidden" name="length_ts"      tal:attributes="value day_length   | nothing" />
         <input type="hidden" name="isAnon"         tal:attributes="value python:context.portal_membership.isAnonymousUser()" />
         <input type="hidden" name="portal_url"     tal:attributes="value string:${portal_url}" />
+        <input type="hidden" name="booking_interval" tal:attributes="value booking_interval | nothing" />
 
         <tal:block tal:condition="not:btypes">
           <p i18n:translate="description_no_bookable_object">

@@ -238,6 +238,20 @@ BookingCenterSchema = ATFolderSchema.copy() + Schema((
             i18n_domain=I18N_DOMAIN,
             ),
         ),
+    IntegerField(
+        'bookingInterval',
+        schemata=DISPLAY_SCHEMATA,
+        required=True,
+        default=5,
+        widget=IntegerWidget(
+            label='Minimal booking interval',
+            description="""You can set the minimum interval for a booking. """
+                        """In minute.""",
+            label_msgid='label_bookingcenter_booking_interval',
+            description_msgid='help_bookingcenter_booking_interval',
+            i18n_domain=I18N_DOMAIN,
+            ),
+        ),
     ))
 
 
@@ -659,6 +673,11 @@ class BookingCenter(ATFolder):
         types = [x for x in type_vocab.keys() if x in brain_types]
         types.sort()
         return types
+  
+    security.declarePublic('getBookingInterval')
+    def getBookingIntervalInSeconds(self):
+        """Returns bookingInterval in seconds"""
+        return self.getBookingInterval() * 60
 
 
 registerType(BookingCenter, PROJECTNAME)
