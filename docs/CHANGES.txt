@@ -1,6 +1,17 @@
 ChangeLog
 =========
 
+3.1.0-dev
+---------
+
+ * Correct filter while posting empty values [tiazma]
+ * Fail properly while encountering daylight saving time issues [tiazma]
+ * Fix wrong usage of normalizeString, since Plone 4 changes [tiazma]
+ * Add correct permission check while displaying shortcuts to add booking [tiazma]
+ * Fix broken translations in DisplayList vocabulary  [tiazma]
+ * New field to control minimum booking interval [tiazma]
+ * Fix bad use of uid_catalog in template [tiazma]
+
 3.0.0b1
 -------
 
