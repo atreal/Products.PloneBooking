@@ -288,7 +288,6 @@ table.periodicListing td a {
   z-index: 65000;
   display: none;
   border: 0px solid &dtml-globalBorderColor;;
-  background: white;
 }
 
 
@@ -386,6 +385,7 @@ table.periodicListing td a {
   border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
   border-bottom: 0;
   margin-top: 0;
+  margin-bottom: 0;
   padding: 3px 0;
   padding-right: 3em;
   text-indent: 1em;
@@ -394,23 +394,26 @@ table.periodicListing td a {
 
 .booking-popup .content {
   padding: 0.5em;
+  border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
+  border-top: none;
+  background-color: #fff;
 }
 
 fieldset.closed {
 	border-width: 0px;
 	height: 0 !important;
 	overflow: hidden;
-    padding: 0;
-    padding-left: 1em;
-    line-height: 1.5em;
-    height: 2em !important;
-    cursor: pointer;
+  padding: 0;
+  padding-left: 1em;
+  line-height: 1.5em;
+    /*height: 2em !important;*/
+  cursor: pointer;
 }
 
 fieldset.opened {
 	height: auto;
 	border-width: 1px;
-    padding: 1em;
+  padding: 1em;
 }
 
 fieldset.closed legend {
@@ -420,7 +423,7 @@ fieldset.closed legend {
 }
 
 fieldset.opened legend {
-    cursor: pointer;
+  cursor: pointer;
 	padding-left: 12px;
 	background: url(&dtml-portal_url;/arrowDown.gif) no-repeat 2px 50%;
 }
