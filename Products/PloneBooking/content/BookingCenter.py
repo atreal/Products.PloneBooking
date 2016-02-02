@@ -673,7 +673,7 @@ class BookingCenter(ATFolder):
         types = [x for x in type_vocab.keys() if x in brain_types]
         types.sort()
         return types
-  
+
     security.declarePublic('getBookingInterval')
     def getBookingIntervalInSeconds(self):
         """Returns bookingInterval in seconds"""
