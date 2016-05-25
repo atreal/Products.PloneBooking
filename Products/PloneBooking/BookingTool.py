@@ -381,6 +381,7 @@ class BookingTool(DateManager, UniqueObject, SimpleItem, ActionProviderBase):
         booking_brains = ctool.searchResults(**criteria)
 
         brain_exception = []
+
         for brain in booking_brains:
             try:
                 obj = brain.getObject()
@@ -394,15 +395,20 @@ class BookingTool(DateManager, UniqueObject, SimpleItem, ActionProviderBase):
                     print "Integrity error on %s" % brain.id
                     brain_exception.append(brain.id)
 
-        msg = "Deleted %s booking(s) between %s and %s"
-        msg = msg % (len(booking_brains), min_date, max_date)
+        nb_target = len(booking_brains)
+        delta = len(brain_exception)
+        nb_result = nb_target - delta
 
-        if len(brain_exception) > 1:
+        msg = "Tried to delete %s booking(s) between %s and %s"
+        msg = msg % (nb_target, min_date, max_date)
+        if nb_target > 1:
+            msg += "\n%s bookings have been deleted."
+            msg = msg % nb_result
+        if delta > 1:
             msg += "\n%s bookings could'nt have been deleted"
-            msg = msg % len(brain_exception)
+            msg = msg % delta
 
         return (True, msg)
-
 
 
 InitializeClass(BookingTool)
